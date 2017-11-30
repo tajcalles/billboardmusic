@@ -26,9 +26,7 @@ class BillboardsController < ApplicationController
     @billboard = Billboard.new(billboard_params)
 
     if @billboard.save
-
-      redirect_to billboard_path @billboard
-
+      redirect_to billboards_path(@billboard)
     else
       render partial: "form"
     end
@@ -37,7 +35,7 @@ class BillboardsController < ApplicationController
 
   def update
     if @billboard.update(billboard_params)
-      redirect_to billboard_path @billboard
+      redirect_to billboard_path(@billboard)
     else
       render partial: "form"
     end
