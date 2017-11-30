@@ -1,2 +1,7 @@
-<h1>Songs#index</h1>
-<p>Find me in app/views/songs/index.html.erb</p>
+<h1>Click a song</h1>
+<%= link_to 'Add a song', new_sub_topic_path(@sub) %>
+<ul>
+  <% @songs.each do |topic| %>
+    <li><%= link_to topic.name, [@sub, @topic] %></li>
+  <% end %>
+</ul>
